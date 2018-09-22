@@ -12,12 +12,8 @@ namespace MonoIntro
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        Texture2D image;
-        Vector2 position;
-        Color tint;
-        Texture2D image2;
-        Vector2 position2;
-        Color tint2;
+        Sprite testObject;
+       
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -46,12 +42,8 @@ namespace MonoIntro
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            position = new Vector2(100, 100);
-            position2 = new Vector2(150, 150);              
-            tint = Color.White;
-            tint2 = Color.White;
-            image = Content.Load<Texture2D>("GreatMindLogo");
-            image2 = Content.Load<Texture2D>("GreatMindLogo");
+
+            testObject = new Sprite(Content.Load<Texture2D>("GreatMindLogo"), new Vector2(50, 50), Color.White);
 
         }
 
@@ -81,14 +73,13 @@ namespace MonoIntro
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Linen);
+            GraphicsDevice.Clear(Color.Yellow);
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
-            
-            spriteBatch.Draw(image, position, tint);
-            spriteBatch.Draw(image2, position2, tint2);
-          //  spriteBatch.Draw()
+
+            //  spriteBatch.Draw()
+            testObject.Draw(spriteBatch);
 
             spriteBatch.End();
             base.Draw(gameTime);
