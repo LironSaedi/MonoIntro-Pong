@@ -13,11 +13,13 @@ namespace MonoIntro
         SpriteBatch spriteBatch;
 
         Sprite testObject;
-       
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            graphics.PreferredBackBufferWidth = 1920;
+            graphics.PreferredBackBufferHeight = 1080;
         }
 
         /// <summary>

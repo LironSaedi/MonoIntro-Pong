@@ -9,21 +9,20 @@ namespace MonoIntro
 {
     public class Sprite
     {
-        Texture2D image;
-        Vector2 position;
-        Color tint;
-
+        public Texture2D Image { get; set; }
+        public Vector2 Position { get; set; }
+        public Color Tint { get; set; }
 
         public Sprite(Texture2D image, Vector2 position, Color tint)
         {
-            this.image = image;
-            this.position = position;
-            this.tint = tint;
+            this.Image = image;
+            this.Position = position;
+            this.Tint = tint;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public virtual void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(image, position, tint);
+            spriteBatch.Draw(Image, Position, Tint);
         }
     }
 }
